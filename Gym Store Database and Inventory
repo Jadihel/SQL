@@ -1,0 +1,35 @@
+--Create a Gym Store database
+
+CREATE TABLE Gym_Store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, use TEXT);
+
+INSERT INTO Gym_Store VALUES (1, "Dumbell", 6, 20, "Both");
+INSERT INTO Gym_Store VALUES (2, "Barbell", 2, 90, "Both");
+INSERT INTO Gym_Store VALUES (3, "Bench", 4, 50, "Both");
+INSERT INTO Gym_Store VALUES (4, "Squat Rack", 2, 150, "Commercial");
+INSERT INTO Gym_Store VALUES (5, "Smith Machine", 1, 200, "Commercial");
+INSERT INTO Gym_Store VALUES (6, "Leg Press", 1, 500, "Commercial");
+INSERT INTO Gym_Store VALUES (7, "Hack Squat", 2, 800, "Commercial");
+INSERT INTO Gym_Store VALUES (8, "Treadmill", 5, 130, "Both");
+INSERT INTO Gym_Store VALUES (9, "Stair Master", 2, 160, "Commercial");
+INSERT INTO Gym_Store VALUES (10, "Elliptical", 1, 100, "Commercial");
+INSERT INTO Gym_Store VALUES (11, "Rowing Machine", 2, 120, "Commercial");
+INSERT INTO Gym_Store VALUES (12, "Abs Machine", 2, 90, "Commercial");
+INSERT INTO Gym_Store VALUES (13, "Traps Machine", 1, 170, "Commercial");
+INSERT INTO Gym_Store VALUES (14, "Bicep Machine", 2, 200, "Commercial");
+INSERT INTO Gym_Store VALUES (15, "Cable Machine", 3, 900, "Commercial");
+
+--display the database ordered by price.
+SELECT * FROM Gym_Store
+ORDER BY price desc;
+
+--what items can be purchased for Commercial use only?
+SELECT * FROM Gym_Store
+WHERE use ="Commercial";
+
+--what items can be purchased under $200?
+SELECT id, name, quantity, price
+FROM Gym_Store
+WHERE price <=200
+ORDER BY price desc
+LIMIT 7;
+
